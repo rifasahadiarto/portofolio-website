@@ -161,6 +161,9 @@
     .intro-copy { max-width: 640px; }
     .intro-copy h2 { margin: 0 0 26px; font-size: clamp(40px,6vw,76px); line-height: .98; letter-spacing: -.075em; font-weight: 500; }
     .intro-copy p, .education-copy p { max-width: 580px; margin: 0; color: #c3c3c5; font-size: 15px; line-height: 1.9; }
+    .intro-copy .section-label { margin-bottom: 20px; color: #e4e4e4; font-size: 12px; font-weight: 600; letter-spacing: .18em; }
+    .intro-copy p { max-width: 640px; color: #e0e0e0; font-size: clamp(16px,1.35vw,18px); line-height: 1.8; font-weight: 500; }
+    .intro-copy p + p { margin-top: 15px; }
     .intro-note { display: flex; gap: 15px; margin-top: 32px; padding-top: 20px; color: #ddd; font-size: 12px; }
     .intro-note span { color: var(--muted); }
     .education-mark { min-height: 300px; display: grid; place-items: center; overflow: hidden; background: #f2f2f0; }
@@ -176,13 +179,48 @@
     .project-list { display: grid; gap: clamp(82px,12vw,158px); }
     .project-row { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(280px,.9fr); align-items: center; gap: clamp(42px,8vw,112px); }
     .project-row--reverse .project-shot { order: 2; } .project-row--reverse .project-copy { order: 1; }
+    .project-row--reverse .market-gallery { order: 2; }
+    .project-row--reverse .etl-gallery { order: 2; }
+    .project-row--tk { grid-template-columns: minmax(0,1fr); align-items: start; gap: clamp(22px,3vw,36px); }
+    .tk-project-intro { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr); align-items: end; gap: clamp(36px,6vw,80px); }
+    .tk-project-intro .project-index { margin-bottom: 16px; }
+    .tk-project-intro h3 { margin: 0; font-size: clamp(32px,4vw,54px); line-height: 1.02; letter-spacing: -.065em; font-weight: 500; }
+    .tk-project-intro p { max-width: 650px; margin: 0; color: #bfc0c2; font-size: 14px; line-height: 1.85; }
     .project-shot { position: relative; display: grid; place-items: center; min-height: 370px; aspect-ratio: 1.45; overflow: hidden; background: #efefed; }
     .project-shot img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .project-shot--dark { background: #111214; }
+    .project-shot--tk-report { min-height: 0; aspect-ratio: 1.8; background: transparent; }
+    .project-shot--tk-report img { object-fit: cover; object-position: center; }
+    .project-row--nlp { grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); align-items: center; gap: clamp(32px,6vw,80px); }
+    .project-row--nlp .project-copy { max-width: 560px; }
+    .project-row--nlp .project-copy h3 { font-size: clamp(28px,3.1vw,41px); }
+    .project-shot.project-shot--nlp { width: 100%; justify-self: stretch; min-height: 0; aspect-ratio: 2.62; background: transparent; }
     .project-shot figcaption { position: absolute; left: 15px; bottom: 13px; padding: 6px 9px; background: rgba(8,9,11,.78); color: #ededed; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+    .tk-project-highlights { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 40px; margin: 0; }
+    .tk-project-tags { margin-top: 0; }
+    .pln-gallery { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); grid-template-rows: repeat(2,minmax(0,1fr)); gap: 10px; min-height: 430px; aspect-ratio: 1.28; }
+    .pln-gallery__item { position: relative; min-width: 0; min-height: 0; margin: 0; overflow: hidden; background: transparent; }
+    .pln-gallery__item--primary { grid-row: 1 / span 2; }
+    .pln-gallery__item img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .pln-gallery__item--meeting img { object-fit: cover; object-position: center 58%; }
+    .pln-gallery__item figcaption { position: absolute; left: 10px; right: 10px; bottom: 10px; width: fit-content; max-width: calc(100% - 20px); padding: 6px 9px; background: rgba(8,9,11,.78); color: #ededed; font-size: 9px; line-height: 1.4; letter-spacing: .06em; text-transform: uppercase; }
+    .market-gallery { display: grid; gap: 13px; align-content: center; width: 100%; }
+    .market-gallery__item { position: relative; min-width: 0; margin: 0; overflow: hidden; background: transparent; aspect-ratio: 1.57; }
+    .market-gallery__item--support { width: 88%; justify-self: center; aspect-ratio: 1.667; }
+    .market-gallery__item img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .market-gallery__item figcaption { position: absolute; left: 10px; right: 10px; bottom: 10px; width: fit-content; max-width: calc(100% - 20px); padding: 6px 9px; background: rgba(8,9,11,.82); color: #ededed; font-size: 9px; line-height: 1.4; letter-spacing: .06em; text-transform: uppercase; }
+    .etl-gallery { display: grid; gap: 12px; align-content: center; width: 108%; justify-self: center; }
+    .etl-gallery__item { position: relative; min-width: 0; margin: 0; overflow: hidden; background: transparent; }
+    .etl-gallery__item--pipeline { aspect-ratio: 2.77; }
+    .etl-gallery__item--alert { width: 90%; justify-self: center; aspect-ratio: 2; }
+    .etl-gallery__item img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .etl-gallery__item figcaption { position: absolute; left: 10px; right: 10px; bottom: 10px; width: fit-content; max-width: calc(100% - 20px); padding: 6px 9px; background: rgba(8,9,11,.82); color: #ededed; font-size: 9px; line-height: 1.4; letter-spacing: .06em; text-transform: uppercase; }
     .project-copy { max-width: 520px; } .project-index { display: inline-block; margin-bottom: 21px; color: #aaa; font-size: 10px; letter-spacing: .18em; }
     .project-copy h3 { margin: 0 0 16px; font-size: clamp(29px,3.4vw,45px); line-height: 1.05; letter-spacing: -.06em; font-weight: 500; }
     .project-copy p { margin: 0; color: #bfc0c2; font-size: 14px; line-height: 1.85; }
+    .project-highlights { display: grid; gap: 10px; margin: 19px 0 0; padding-left: 18px; color: #bfc0c2; font-size: 12px; line-height: 1.7; }
+    .project-highlights li::marker { color: #dedede; }
+    .project-highlights strong { color: #f2f2f2; font-weight: 600; }
     .project-tags { margin-top: 22px; } .project-tags span { padding: 8px 11px; border-color: transparent; background: rgba(255,255,255,.045); color: #e4e4e4; font-size: 10px; }
     .project-detail-link { display: inline-flex; margin-top: 22px; color: #f4f4f4; font-size: 11px; font-weight: 600; }
     .tk-visual, .sql-visual { width: min(82%,510px); padding: clamp(20px,3vw,36px); color: #f4f4f4; background: #151619; border: 1px solid rgba(255,255,255,.12); }
@@ -210,6 +248,13 @@
       .intro-grid,.education-grid { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:38px; }
       .intro-photo { min-height:390px; } .software-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
       .project-row { grid-template-columns:minmax(0,1fr) minmax(0,.9fr); gap:35px; } .project-shot { min-height:290px; }
+      .project-shot--tk-report { min-height:0; }
+      .project-row--tk { grid-template-columns:minmax(0,1fr); gap:28px; }
+      .etl-gallery { width:100%; }
+      .project-row--nlp { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:28px; }
+      .tk-project-intro { gap:30px; }
+      .nlp-project-intro { gap:30px; }
+      .pln-gallery { min-height:360px; }
       .contact-grid { grid-template-columns:1fr 1fr; gap:42px; }
     }
     @media(max-width:620px) {
@@ -218,8 +263,19 @@
       .intro-copy h2 { font-size:clamp(42px,12vw,60px); } .education-mark { min-height:240px; }
       .software-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } .software-item { min-height:66px; padding:10px; gap:9px; font-size:11px; }
       .software-logo { width:32px; height:32px; flex-basis:32px; } .software-logo--wordmark { width:70px; height:26px; flex-basis:70px; } .software-wordmark { width:38px; flex-basis:38px; font-size:16px; } .project-list { gap:78px; }
-      .project-row { grid-template-columns:1fr; gap:25px; } .project-row--reverse .project-shot,.project-row--reverse .project-copy { order:initial; }
+      .project-row { grid-template-columns:1fr; gap:25px; } .project-row--reverse .project-shot,.project-row--reverse .project-copy,.project-row--reverse .market-gallery,.project-row--reverse .etl-gallery { order:initial; }
+      .project-row--tk { grid-template-columns:1fr; gap:22px; }
+      .tk-project-intro { grid-template-columns:1fr; gap:18px; }
+      .tk-project-highlights { grid-template-columns:1fr; gap:10px; }
+      .project-row--nlp { grid-template-columns:1fr; gap:25px; }
+      .project-shot.project-shot--nlp { width:min(100%,700px); justify-self:center; }
       .project-shot { min-height:245px; aspect-ratio:1.25; } .project-copy h3 { font-size:34px; } .project-copy p { font-size:13px; }
+      .project-shot--tk-report { min-height:0; aspect-ratio:1.8; }
+      .project-shot.project-shot--nlp { width:100%; }
+      .pln-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:245px 140px; min-height:0; aspect-ratio:auto; }
+      .pln-gallery__item--primary { grid-column:1 / -1; grid-row:auto; }
+      .market-gallery { gap:10px; } .market-gallery__item--support { width:100%; }
+      .etl-gallery { gap:10px; } .etl-gallery__item--alert { width:100%; }
       .social-logos { gap: 10px; } .social-mark { width:50px; height:50px; }
     }
     @media(prefers-reduced-motion:reduce) { .reveal { opacity:1; transform:none; transition:none; } }
@@ -251,7 +307,7 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-glow"></div>
-      <div class="hero-role" id="hero-title">Data Analyst &amp;<br />Business Intelligence</div>
+      <div class="hero-role" id="hero-title">Portofolio</div>
       <div class="hero-name" aria-label="Rifasa Hadiarto"><span class="first">Rifasa</span><span class="last">Hadiarto</span></div>
       <img class="hero-image" src="./rifasa_portrait_half_knee_bw.png" alt="Foto profil Rifasa Hadiarto" />
     </section>
@@ -260,15 +316,16 @@
       <div class="wrap intro-grid">
         <div class="intro-photo"><img src="./rifasa_portrait_half_knee_bw.png" alt="Potret hitam putih Rifasa Hadiarto" loading="lazy" /></div>
         <div class="intro-copy">
-          <span class="section-label">INTRODUCTION</span><h2>Data yang rapi.<br />Insight yang jelas.</h2>
-          <p>Saya lulusan S1 Teknik Informatika Universitas Komputer Indonesia (UNIKOM), dengan minat pada Data Analytics, Data Engineering, dan AI Automation. Saya mengolah data operasional, membangun dashboard, menganalisis teks Bahasa Indonesia, dan merangkai otomasi supaya informasi lebih mudah dipakai untuk mengambil keputusan.</p>
+          <span class="section-label">INTRODUCTION</span>
+          <p>Bachelor's degree (S1) graduate in Informatics Engineering from Universitas Komputer Indonesia (UNIKOM) with a strong interest in Data Analytics, Data Engineering, and AI Automation. Completed data analytics and data science certification programs from IBM and RevoU. Experienced in developing operational monitoring dashboards for PT PLN (Persero) UP3 Cimahi, and involved in multiple projects related to SQL data modeling, large-scale data ingestion, and workflow automation using Python and n8n.</p>
+          <p>Currently focused on expanding practical skills in modern DataOps, pipeline engineering, and AI-driven data automation.</p>
           <div class="intro-note"><strong>Certified Data Analyst</strong><span>BNSP · UNIKOM</span></div>
         </div>
       </div>
     </section>
     <section class="section feature-section" id="education">
       <div class="wrap">
-        <div class="section-head reveal"><div><span class="section-label">EDUCATION</span><h2>Landasan akademik.</h2></div><p class="section-intro">Ilmu komputer menjadi dasar untuk bekerja dengan data, sistem, dan perangkat lunak.</p></div>
+        <div class="section-head reveal"><div><h2>Education</h2></div></div>
         <div class="education-grid reveal">
           <div class="education-mark"><img class="education-logo" src="assets/unikom-logo-latest.webp" alt="Logo terbaru Universitas Komputer Indonesia (UNIKOM)" loading="lazy" decoding="async"></div>
           <div class="education-copy"><span class="section-label">S1 · INFORMATICS ENGINEERING</span><h3>Universitas Komputer Indonesia</h3><p>Pendidikan Teknik Informatika membangun dasar di bidang pemrograman, basis data, algoritma, dan rekayasa perangkat lunak. Bekal ini saya terapkan dalam proyek analitik, pengolahan data, dan otomasi.</p><div class="education-meta"><span>Sarjana (S1)</span><span>Bandung, Indonesia</span></div></div>
@@ -277,7 +334,7 @@
     </section>
     <section class="section feature-section" id="skills">
       <div class="wrap">
-        <div class="section-head reveal"><div><span class="section-label">SKILL SOFTWARE</span><h2>Perangkat kerja.</h2></div><p class="section-intro">Tools yang saya gunakan untuk menyiapkan data, menganalisis, menyajikan insight, dan mengotomatisasi proses.</p></div>
+        <div class="section-head reveal"><div><h2>Soft Skills and Software</h2></div><p class="section-intro">Tools yang saya gunakan untuk menyiapkan data, menganalisis, menyajikan insight, dan mengotomatisasi proses.</p></div>
         <div class="software-grid reveal" aria-label="Software dan tools">
           <div class="software-item"><img class="software-logo" src="assets/software-logos/python.svg" alt="" loading="lazy" decoding="async"><span>Python</span></div>
           <div class="software-item" aria-label="SQL"><span class="software-wordmark" role="img" aria-label="SQL">SQL</span></div>
@@ -295,27 +352,70 @@
     </section>
     <section class="section feature-section" id="projects">
       <div class="wrap">
-        <div class="section-head reveal"><div><span class="section-label">SELECTED WORK</span><h2>Proyek pilihan.</h2></div><p class="section-intro">Sorotan pekerjaan di business intelligence, data preparation, NLP, dan otomasi berbasis AI.</p></div>
+        <div class="section-head reveal"><div><h2>My Project</h2></div><p class="section-intro">Sorotan proyek di business intelligence, data engineering, analitik pasar, NLP, dan otomasi AI.</p></div>
         <div class="project-list">
           <article class="project-row reveal">
-            <figure class="project-shot"><img src="./assets/pln-dashboard.png" alt="Ringkasan dashboard PLN UP3 Cimahi" loading="lazy" /><figcaption>Looker Studio · Executive overview</figcaption></figure>
-            <div class="project-copy"><span class="project-index">01 / BUSINESS INTELLIGENCE</span><h3>PLN UP3 Cimahi<br />NKO Dashboard</h3><p>Dashboard pemantauan kinerja organisasi dan operasional jaringan. Data dari unit layanan dirapikan dan disajikan untuk membantu melihat capaian KPI, keandalan jaringan, serta area yang perlu perhatian.</p><div class="project-tags"><span>Looker Studio</span><span>Google Sheets</span><span>KPI Monitoring</span></div><a class="project-detail-link" href="https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF" target="_blank" rel="noreferrer">Lihat dashboard ↗</a></div>
+            <div class="pln-gallery" aria-label="Galeri proyek PLN UP3 Cimahi">
+              <figure class="pln-gallery__item pln-gallery__item--primary"><img src="./assets/pln-dashboard.png" alt="Dashboard NKO PLN UP3 Cimahi yang sebelumnya sudah ada di portofolio" loading="lazy" decoding="async" /><figcaption>NKO dashboard · overview</figcaption></figure>
+              <figure class="pln-gallery__item"><img src="./assets/pln-outage-analytics-dashboard.png" alt="Dashboard analisis gangguan penyulang PLN dengan ringkasan KPI dan tren gangguan" loading="lazy" decoding="async" /><figcaption>Outage analytics · KPI &amp; trends</figcaption></figure>
+              <figure class="pln-gallery__item pln-gallery__item--meeting"><img src="./assets/pln-up3-cimahi-meeting.jpeg" alt="Diskusi evaluasi operasional bersama tim di UP3 Cimahi" loading="lazy" decoding="async" /><figcaption>Evaluasi operasional · UP3 Cimahi</figcaption></figure>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">01 / BUSINESS INTELLIGENCE</span>
+              <h3>PT PLN (Persero) UP3 Cimahi: NKO &amp; Operations Analytics Suite</h3>
+              <p>Membangun dashboard interaktif di Google Looker Studio untuk memantau Nilai Kinerja Organisasi (NKO) dan keandalan sistem distribusi listrik pada 7 Unit Layanan Pelanggan (ULP). Rekonsiliasi data operasional diotomatisasi dan sistem pemantauan real-time disiapkan untuk mendukung evaluasi berkala manajemen.</p>
+              <ul class="project-highlights">
+                <li><strong>Efisiensi pelaporan 80%:</strong> konsolidasi data bulanan lintas 7 unit dipangkas dari berhari-hari menjadi hitungan jam.</li>
+                <li><strong>Cakupan 7 ULP:</strong> Cibabat, Cimahi Kota, Padalarang, Rajamandala, Cililin, Lembang, dan Prima Cimahi.</li>
+                <li><strong>Keandalan jaringan:</strong> pemantauan SAIDI/SAIFI dan penyulang dengan trip tertinggi untuk mendukung inspeksi preventif.</li>
+                <li><strong>Traffic light KPI:</strong> klasifikasi status target hijau, kuning, dan merah untuk mempercepat evaluasi unit kerja.</li>
+              </ul>
+              <div class="project-tags"><span>Looker Studio</span><span>Google Sheets</span><span>NKO</span><span>SAIDI / SAIFI</span></div>
+              <a class="project-detail-link" href="https://datastudio.google.com/reporting/744c4bea-9c47-44fc-a30f-f2afec72ebde/page/AFOVF" target="_blank" rel="noreferrer">Lihat dashboard ↗</a>
+            </div>
           </article>
           <article class="project-row project-row--reverse reveal">
-            <figure class="project-shot project-shot--dark"><div class="tk-visual" role="img" aria-label="285 entri formulir dibersihkan menjadi 104 catatan siswa unik"><span class="mock-label">DATA CLEANING · ADMISSIONS</span><div class="tk-numbers"><div class="tk-number"><strong>285</strong><span>Entri formulir</span></div><span class="tk-arrow">→</span><div class="tk-number"><strong>104</strong><span>Data unik</span></div></div><div class="tk-bars" aria-hidden="true"><i style="height:36%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:82%"></i><i style="height:58%"></i><i style="height:73%"></i><i style="height:92%"></i><i style="height:67%"></i></div></div><figcaption>Raw entries → cleaned records</figcaption></figure>
-            <div class="project-copy"><span class="project-index">02 / DATA PREPARATION</span><h3>TK Nusantara<br />Admissions Analytics</h3><p>Membersihkan data pendaftaran yang berulang menjadi 104 catatan unik, lalu menyiapkan analisis kanal informasi, kelas, wilayah, dan skenario subsidi.</p><div class="project-tags"><span>Python</span><span>SQL</span><span>Tableau</span></div></div>
+            <div class="market-gallery" aria-label="Visual analitik pasar kuliner Kota Bandung">
+              <figure class="market-gallery__item"><img src="./assets/heatmap-kuliner-bandung.png" alt="Heatmap kepadatan persaingan kuliner Kota Bandung dari 9.121 data" loading="lazy" decoding="async" /><figcaption>Market density • Heatmap analysis (Python &amp; Pandas)</figcaption></figure>
+              <figure class="market-gallery__item market-gallery__item--support"><img src="./assets/grafik-persaingan-kopi.png" alt="Grafik persaingan 2.094 coffee shop di Kota Bandung" loading="lazy" decoding="async" /><figcaption>Competitive landscape • Coffee shop density (SQL &amp; Matplotlib)</figcaption></figure>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">02 / DATA ENGINEERING &amp; MARKET ANALYTICS</span>
+              <h3>Bandung Gastronomy Intelligence: 9,121 Records Data Pipeline &amp; Market Analytics</h3>
+              <p>Proyek eksplorasi data mandiri untuk mengolah 9.121 data pelaku usaha kuliner dari portal Open Data Kota Bandung. Saya membangun pipeline otomatis untuk menarik data melalui REST API Disparbud, merancang database relasional Star Schema, serta menganalisis potensi pasar kuliner Kota Bandung menggunakan SQL dan Machine Learning.</p>
+              <ul class="project-highlights">
+                <li><strong>Eksplorasi data riil:</strong> menarik 9.121 data mentah dari 19 halaman API Disparbud dan membersihkan format teks tanpa menghilangkan data.</li>
+                <li><strong>Desain Star Schema:</strong> tabel fakta dan dimensi kawasan di SQLite dengan indeks B-Tree untuk query yang lebih cepat dan terstruktur.</li>
+                <li><strong>Analisis pasar dengan SQL:</strong> menggunakan CTE dan <code>RANK() OVER</code> untuk memetakan kawasan Red Ocean dan Blue Ocean.</li>
+                <li><strong>Machine Learning:</strong> Random Forest Regressor mencapai R-squared 0.94 untuk mempelajari pengaruh lokasi dan kategori usaha terhadap estimasi omzet.</li>
+              </ul>
+              <div class="project-tags"><span>REST API</span><span>SQLite</span><span>SQL</span><span>Python</span><span>Machine Learning</span></div>
+            </div>
           </article>
-          <article class="project-row reveal">
-            <figure class="project-shot project-shot--dark"><div class="sql-visual" role="img" aria-label="Ilustrasi penerjemahan pertanyaan bahasa alami menjadi query SQL"><span class="mock-label">NATURAL LANGUAGE → SQL</span><div class="sql-window"><span class="sql-question">“Tampilkan total penjualan per kota.”</span><span class="sql-keyword">SELECT</span> kota, SUM(penjualan)<br /><span class="sql-keyword">FROM</span> transaksi<br /><span class="sql-keyword">GROUP BY</span> kota;</div></div><figcaption>Text-to-SQL · concept</figcaption></figure>
-            <div class="project-copy"><span class="project-index">03 / AI &amp; DATA ACCESS</span><h3>Text-to-SQL<br />Agent</h3><p>Eksplorasi antarmuka bahasa alami untuk membantu menerjemahkan pertanyaan tentang data menjadi query SQL. Detail implementasi dan teknologi dapat dilengkapi dari materi proyek.</p><div class="project-tags"><span>Natural Language</span><span>SQL</span><span>AI</span></div></div>
+          <article class="project-row project-row--tk reveal">
+            <div class="tk-project-intro">
+              <div><span class="project-index">03 / DATA CLEANING &amp; DEMOGRAPHIC ANALYTICS</span><h3>TK Nusantara: Student Admissions Data Cleaning &amp; Demographic Analytics</h3></div>
+              <p>Mengolah data pendaftaran calon siswa baru TK Nusantara untuk mengidentifikasi pola demografi keluarga dan efektivitas jalur promosi sekolah. Dari 285 entri mentah yang formatnya beragam dan sebagian berulang, saya menggunakan Python untuk standarisasi dan deduplikasi hingga menjadi 104 catatan bersih. Analisis deskriptifnya membantu manajemen meninjau kuota kelas dan strategi penerimaan murid.</p>
+            </div>
+            <figure class="project-shot project-shot--tk-report"><img src="./assets/tk-nusantara-admissions-analysis.png" alt="Dashboard pendaftaran dan analisis subsidi TK Nusantara, termasuk sumber pendaftaran, pekerjaan orang tua, domisili, dan beban tanggungan murid" loading="lazy" decoding="async" /><figcaption>Admissions &amp; tuition subsidy · demographic analytics</figcaption></figure>
+            <ul class="project-highlights tk-project-highlights">
+              <li><strong>Pembersihan data mentah:</strong> menstandarkan nilai tinggi seperti “120cm” dan “1 meter” ke format numerik yang konsisten.</li>
+              <li><strong>Deduplikasi otomatis:</strong> script Python menghapus entri berulang sambil menjaga riwayat informasi pendaftaran yang penting.</li>
+              <li><strong>Sebaran wilayah:</strong> memetakan domisili pendaftar di Cihanjuang, Cisasawi, Sariwangi, dan sekitar Parongpong untuk evaluasi jangkauan zonasi.</li>
+              <li><strong>Efektivitas kanal:</strong> rekomendasi teman/keluarga menjadi 87,5% sumber informasi pada 104 data bersih yang ditampilkan, melampaui kanal lainnya.</li>
+            </ul>
+            <div class="project-tags tk-project-tags"><span>Python</span><span>Data Cleaning</span><span>Demographic Analytics</span><span>Admissions</span></div>
           </article>
           <article class="project-row project-row--reverse reveal">
-            <figure class="project-shot"><img src="./assets/youtube-sentiment.png" alt="Visualisasi analisis sentimen komentar YouTube" loading="lazy" /><figcaption>500 komentar · Bahasa Indonesia</figcaption></figure>
-            <div class="project-copy"><span class="project-index">04 / NLP · TEXT ANALYTICS</span><h3>YouTube Comment<br />Sentiment Analysis</h3><p>Menganalisis 500 komentar berbahasa Indonesia dengan normalisasi kata tidak baku dan pendekatan sentimen berbasis kamus. Hasilnya merangkum kecenderungan opini dari kumpulan komentar.</p><div class="project-tags"><span>Python</span><span>YouTube API</span><span>NLP</span></div><a class="project-detail-link" href="https://colab.research.google.com/drive/1H2cyYVkeH3tRTUXjHypsI-PYQoJedkf3" target="_blank" rel="noreferrer">Buka notebook ↗</a></div>
+            <div class="etl-gallery" aria-label="Arsitektur pipeline n8n dan contoh laporan AI di Discord">
+              <figure class="etl-gallery__item etl-gallery__item--pipeline"><img src="./assets/n8n-pipeline-architecture.png" alt="Arsitektur pipeline n8n dari Google Drive melalui pembersihan JavaScript ke Google Sheets, AI, dan Discord" loading="lazy" decoding="async" /><figcaption>Event-driven cloud ETL · n8n architecture</figcaption></figure>
+              <figure class="etl-gallery__item etl-gallery__item--alert"><img src="./assets/n8n-discord-ai-alert.png" alt="Contoh ringkasan insight data otomatis dan alert AI pada Discord" loading="lazy" decoding="async" /><figcaption>Automated reporting · AI Discord alert</figcaption></figure>
+            </div>
+            <div class="project-copy"><span class="project-index">04 / DATAOPS AUTOMATION</span><h3>Autonomous Cloud ETL Pipeline &amp; AI Reporting Engine with n8n</h3><p>Membangun alur otomasi pemrosesan data berbasis event-driven menggunakan n8n untuk mengeliminasi pekerjaan repetitif pembersihan file spreadsheet harian. Sistem mendeteksi unggahan file data mentah di Google Drive, menjalankan pembersihan dan deduplikasi dengan JavaScript, menyinkronkan data bersih ke Google Sheets, lalu memicu AI untuk mengirim ringkasan performa ke saluran Discord tim.</p><ul class="project-highlights"><li><strong>Event-driven ingestion:</strong> pipeline berjalan otomatis saat file CSV baru diunggah ke Google Drive.</li><li><strong>Pembersihan deterministik:</strong> JavaScript memangkas spasi liar, memfilter baris kosong, dan menghapus duplikasi.</li><li><strong>Dual-tier cloud storage:</strong> menyimpan arsip XLSX terstruktur sekaligus memperbarui data di Google Sheets.</li><li><strong>Automated reporting &amp; AI alert:</strong> AI merangkum temuan utama dan mengirim alert eksekutif ke Discord.</li></ul><div class="project-tags"><span>n8n</span><span>Google Drive</span><span>JavaScript</span><span>Google Sheets</span><span>Discord</span><span>AI</span></div></div>
           </article>
-          <article class="project-row reveal">
-            <figure class="project-shot project-shot--dark"><img src="./assets/n8n-pipeline.png" alt="Canvas alur otomasi ETL di n8n" loading="lazy" /><figcaption>Event-driven workflow · n8n</figcaption></figure>
-            <div class="project-copy"><span class="project-index">05 / DATAOPS AUTOMATION</span><h3>Automated ETL<br />&amp; AI Reporting</h3><p>Alur otomatisasi memproses file CSV dari Google Drive, membersihkan dan menghapus duplikasi, menyinkronkan hasil ke Sheets, lalu mengirim ringkasan AI melalui Discord.</p><div class="project-tags"><span>n8n</span><span>JavaScript</span><span>Gemini</span><span>APIs</span></div></div>
+          <article class="project-row project-row--nlp reveal">
+            <div class="project-copy"><span class="project-index">05 / NLP · TEXT ANALYTICS</span><h3>YouTube Comments Sentiment Analysis: Indonesian Slang Normalization &amp; Negation Engine</h3><p>Membangun pipeline pemrosesan bahasa alami (NLP) untuk menganalisis opini publik dari 500 komentar video YouTube menggunakan YouTube Data API v3. Proyek ini berfokus pada penanganan teks informal khas netizen Indonesia, normalisasi bahasa gaul, serta pengenalan pembalikan makna akibat kata negasi.</p><ul class="project-highlights"><li><strong>Ekstraksi data API publik:</strong> mengambil 500 komentar melalui YouTube Data API v3 dengan paginasi token.</li><li><strong>Normalisasi bahasa gaul:</strong> membersihkan URL, mention, dan tanda baca, lalu membakukan singkatan seperti “bgt” menjadi “banget” dan “ga/gak” menjadi “tidak”.</li><li><strong>Logika penanganan negasi:</strong> membalik skor kata sifat setelah kata sanggahan agar frasa seperti “tidak bagus” dilabeli negatif.</li><li><strong>Distribusi &amp; WordCloud:</strong> merangkum 57% netral, 38,6% positif, dan 4,4% negatif serta memetakan kata kunci emosional.</li></ul><div class="project-tags"><span>Python</span><span>YouTube Data API v3</span><span>NLP</span><span>Slang Normalization</span><span>Negation Handling</span><span>WordCloud</span></div><a class="project-detail-link" href="https://colab.research.google.com/drive/1H2cyYVkeH3tRTUXjHypsI-PYQoJedkf3" target="_blank" rel="noreferrer">Buka notebook ↗</a></div>
+            <figure class="project-shot project-shot--nlp"><img src="./assets/nlp-results-preview.png" alt="Grafik distribusi sentimen dari 500 komentar YouTube: 57 persen netral, 38,6 persen positif, dan 4,4 persen negatif" loading="lazy" decoding="async" /><figcaption>Sentiment distribution · 500 YouTube comments</figcaption></figure>
           </article>
         </div>
       </div>
